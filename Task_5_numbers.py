@@ -11,3 +11,18 @@ for i in range(0, 101):
         print(tens[i])
     else:
         print (i)
+
+
+# -------------------------
+# OPTION 2
+# -------------------------
+# This script uses a different library that needs to be installed before it
+# can be imported and used in the script. For this script it is fine to use
+# either of the options, but this one is most optimized
+from num2words import num2words
+for i in range(0, 101):
+    if i % 10 == 0 and i!=0:
+        print(num2words(i))
+    else:
+        print (i)
+
