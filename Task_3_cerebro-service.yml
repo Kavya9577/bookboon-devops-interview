@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cerebro-gui-service
+spec:
+  selector:
+    matchLabels:
+      app: cerebro
+ template:
+    metadata:
+      labels:
+        app: cerebro
+  ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: 90
+
+kubectl port-forward deployment/cerebro-gui-service :9000

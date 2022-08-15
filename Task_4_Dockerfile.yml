@@ -1,0 +1,17 @@
+# TASK 4
+# docker build -t bookboon/task4:v1 .
+# docker run -d bookboon/task4:v1
+FROM ubuntu 
+RUN apt-get update 
+RUN apt-get -d -y install nginx 
+RUN apt-get -y install nginx
+# COPY unlim.sh .
+RUN printf "#\!/bin/bash \
+\nwhile : \
+\ndo \
+\n	echo \"Bookboon test\" \
+\n	sleep 1 \
+\ndone\n" > unlim.sh
+ENTRYPOINT ["/bin/bash", "unlim.sh"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
+#CMD ["/bin/echo \"Bookboon test\""]
